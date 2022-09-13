@@ -40,8 +40,83 @@ const restaurant = {
       `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
     );
   },
+  orderPizza: function (mainIng, ...otherIng) {
+    console.log(mainIng);
+    console.log(otherIng);
+  },
 };
 
+restaurant.numGuest = 0;
+
+const guest = restaurant.numGuest || 11;
+console.log(guest);
+
+//Nulish: null and undefined
+const guestCorrect = restaurant.numGuest ?? 10;
+console.log(guestCorrect);
+
+/*
+console.log('-----OR-----');
+//Use any data type, return any data type, short-circuiting
+console.log(3 || 'osman');
+console.log('' || 'osman');
+console.log(true || 0);
+console.log(undefined || null);
+
+console.log(undefined || 0 || '' || 'Mrb' || 23 || null);
+
+//restaurant.numGuest = 15;
+const guest1 = restaurant.numGuest ? restaurant.numGuest : 10;
+console.log(guest1);
+
+const guest2 = restaurant.numGuest || 11;
+console.log(guest2);
+
+console.log('-----AND-----');
+
+console.log(0 && 'osman');
+console.log(7 && 'osman');
+console.log('mrb' && 23 && null && 'osman');
+
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mashrooms', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mashrooms', 'spinach');
+*/
+/*
+//Spread, because on right side of =
+const arr = [1, 2, ...[3, 4]];
+
+//Rest, because on left side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(arr, others);
+
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood);
+
+//Objects
+const { fri, ...weekDays } = restaurant.openingHours;
+console.log(fri, weekDays);
+
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  return console.log(sum);
+};
+add(1, 2, 3, 4, 5);
+
+const x = [1, 2, 3, 4, 5];
+add(...x);
+
+restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
+*/
+/*
 const arr = [7, 8, 9];
 const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
 console.log(badNewArr);
@@ -67,7 +142,7 @@ console.log(menu);
 const str = 'Osman';
 const letters = [...str, 'ı', 'n'];
 console.log(letters);
-
+*/
 //Real-world example
 /*const ingredients = [
   prompt('Lets make pasta! Ingredient1?'),
@@ -76,7 +151,7 @@ console.log(letters);
 ];
 console.log(ingredients);
 restaurant.orderPasta(...ingredients);*/
-
+/*
 //Objects
 const newRestaurant = { foundIn: 1998, ...restaurant, founder: 'Guiseppe' };
 console.log(newRestaurant);
@@ -85,6 +160,7 @@ const restaurantCopy = { ...restaurant };
 restaurantCopy.name = 'Roma';
 console.log(restaurantCopy.name);
 console.log(restaurant.name);
+*/
 /*
 //Destructuring Objects
 restaurant.orderDelivery({

@@ -65,7 +65,7 @@ const game = {
       'Coman',
       'Muller',
       'Gnarby',
-      'Lwandowski',
+      'Lewandowski',
     ],
     [
       'Burki',
@@ -82,7 +82,7 @@ const game = {
     ],
   ],
   score: '4:0',
-  scored: ['Lewandowski', 'Gnarby', 'Levandowski', 'Hummels'],
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
   date: 'Nov 9th, 2037',
   odds: {
     team1: 1.33,
@@ -90,6 +90,26 @@ const game = {
     team2: 6.5,
   },
 };
+
+const [neuer, ...fieldPlayers] = game.players[0];
+const [allPlayers] = [[...game.players[0], ...game.players[1]]];
+
+console.log(allPlayers);
+
+const [players1Final] = [[...game.players[0], 'Thiago', 'Coutinho', 'Perisic']];
+console.log(players1Final);
+
+const { team1, x: draw, team2 } = { ...game.odds };
+
+console.log(team1, draw, team2);
+
+const printGoals = function (...players) {
+  console.log(...players);
+  console.log(`${players.length} goals were scored`);
+};
+team1 < team2 && console.log(`${game.team1} is more likely to win!`);
+team1 > team2 && console.log(`${game.team2} is more likely to win!`);
+printGoals(...game.scored);
 
 /*
 const rest1 = {

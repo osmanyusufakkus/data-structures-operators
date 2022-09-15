@@ -54,6 +54,34 @@ const restaurant = {
     console.log(otherIng);
   },
 };
+
+//Property names
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+let openStr = `We are open on ${properties.length} days:
+ `;
+
+for (const day of properties) {
+  openStr += `${day},`;
+}
+console.log(openStr);
+
+//Property names
+const values = Object.values(openingHours);
+console.log(values);
+
+//Entire object
+const entries = Object.entries(openingHours);
+console.log(entries);
+
+//[key, value]
+for (const [day, { open, close }] of entries) {
+  console.log(`On ${day} we open at ${open} and close at ${close} `);
+}
+
+/*
+
 if (restaurant.openingHours && restaurant.openingHours.mon)
   console.log(restaurant.openingHours.mon.open);
 
@@ -79,6 +107,8 @@ console.log(users[0]?.name ?? 'User array empty');
 
 if (users.length > 0) console.log(users[0].name);
 else console.log('User array emty');
+
+*/
 /*
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 //For-of loop
@@ -94,7 +124,7 @@ for (const [i, a] of menu.entries()) {
 
 ////////////////////////////////////////////////////////////////////////////
 /***************************CODING CHALLENGE #1***************************/
-/*
+
 const game = {
   team1: 'GS',
   team2: 'FB',
@@ -155,7 +185,29 @@ const printGoals = function (...players) {
 team1 < team2 && console.log(`${game.team1} is more likely to win!`);
 team1 > team2 && console.log(`${game.team2} is more likely to win!`);
 printGoals(...game.scored);
-*/
+
+const x = Object.entries(game.scored);
+for (const [key, value] of x) {
+  console.log(`Goal ${Number(key) + 1}: ${value}`);
+}
+let sum = 0;
+const y = Object.values(game.odds);
+for (const value of y) {
+  sum += value / 3;
+}
+console.log(`Sum of odds: ${sum}`);
+
+for (const [team, odd] of Object.entries(game.odds)) {
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr} ${odd}`);
+}
+//console.log(game['team1']);
+const scorers = {};
+for (const player of game.scored) {
+  scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+}
+console.log(scorers);
+
 ////////////////////////////////////////////////////////////////////////////
 /*
 const rest1 = {

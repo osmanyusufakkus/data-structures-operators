@@ -55,6 +55,87 @@ const restaurant = {
   },
 };
 
+const rest = new Map();
+rest.set('name', 'Calssico Italiano');
+rest.set(1, 'Firenze, Italy');
+
+console.log(rest.set(2, 'Lisbon, Portugal'));
+
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open ')
+  .set(false, 'We are closed');
+//Call elements by key
+console.log(rest.get('name'));
+console.log(rest.get(true));
+console.log(rest.get(1));
+
+const time = 21;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+//Check element
+console.log(rest.has('categories'));
+
+//Delete element by key
+rest.delete(2);
+rest.set([1, 2], 'Test');
+console.log(rest);
+
+console.log(rest.size);
+//Will not work because of scope
+rest.set([1, 2], 'Test');
+console.log(rest.get([1, 2]));
+//Will work
+const arr = [1, 2];
+rest.set(arr, 'Test');
+console.log(rest.get(arr));
+
+rest.set(document.querySelector('h1'), 'Heading');
+
+//rest.clear();
+
+/*
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+//Add element
+ordersSet.add(`Garlic Bread`);
+ordersSet.add(`Garlic Bread`);
+
+console.log(new Set('Osman'));
+console.log(ordersSet.size);
+console.log(ordersSet.has('Pizza'));
+console.log(ordersSet.has('Bread'));
+//Delete element
+ordersSet.delete('Risotto');
+
+//Delete all elements
+//ordersSet.clear();
+
+for (const order of ordersSet) console.log(order);
+
+console.log(ordersSet);
+
+//Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+
+console.log(
+  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+);
+
+console.log(new Set('OsmanYusufAKKUS').size);
+*/
+/*
 //Property names
 const properties = Object.keys(openingHours);
 console.log(properties);
@@ -79,7 +160,7 @@ console.log(entries);
 for (const [day, { open, close }] of entries) {
   console.log(`On ${day} we open at ${open} and close at ${close} `);
 }
-
+*/
 /*
 
 if (restaurant.openingHours && restaurant.openingHours.mon)
@@ -165,7 +246,7 @@ const game = {
     team2: 6.5,
   },
 };
-
+/*
 const [neuer, ...fieldPlayers] = game.players[0];
 const [allPlayers] = [[...game.players[0], ...game.players[1]]];
 
@@ -207,7 +288,7 @@ for (const player of game.scored) {
   scorers[player] ? scorers[player]++ : (scorers[player] = 1);
 }
 console.log(scorers);
-
+*/
 ////////////////////////////////////////////////////////////////////////////
 /*
 const rest1 = {

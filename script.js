@@ -55,6 +55,43 @@ const restaurant = {
   },
 };
 
+/*
+const question = new Map([
+  ['question', 'What is the best programming lamguage?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JS'],
+  ['correct', 3],
+  [true, 'Correct'],
+  [false, 'Try again'],
+]);
+console.log(question);
+
+//Convert object to map
+console.log(Object.entries(openingHours));
+
+const hoursMap = new Map(Object.entries(openingHours));
+
+console.log(hoursMap);
+
+//Quiz app
+console.log(question.get('question'));
+
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+
+//const answer = Number(prompt('Your answer:'));
+
+//console.log(question.get(question.get('correct') === answer));
+
+//Convert map to array
+console.log([...question]);
+console.log([...question.entries()]);
+console.log([...question.keys()]);
+console.log([...question.values()]);
+*/
+/*
 const rest = new Map();
 rest.set('name', 'Calssico Italiano');
 rest.set(1, 'Firenze, Italy');
@@ -96,6 +133,8 @@ rest.set(document.querySelector('h1'), 'Heading');
 
 //rest.clear();
 
+
+*/
 /*
 const ordersSet = new Set([
   'Pasta',
@@ -289,6 +328,43 @@ for (const player of game.scored) {
 }
 console.log(scorers);
 */
+/***************************CODING CHALLENGE #3***************************/
+
+const gameEvents = new Map([
+  [17, '⚽️ GOAL'],
+  [36, '🔁 Substitution'],
+  [47, '⚽️ GOAL'],
+  [61, '🔁 Substitution'],
+  [64, '🔶 Yellow card'],
+  [69, '🔴 Red card'],
+  [70, '🔁 Substitution'],
+  [72, '🔁 Substitution'],
+  [76, '⚽️ GOAL'],
+  [80, '⚽️ GOAL'],
+  [92, '🔶 Yellow card'],
+]);
+const event = new Set();
+
+for (const x of [...gameEvents.values()]) {
+  event.add(x);
+}
+console.log([...event]);
+event.delete([...gameEvents.entries()]);
+event.delete(gameEvents.get(64));
+console.log([...event]);
+
+const time = [...gameEvents.keys()].pop();
+let average = 0;
+average = time / gameEvents.size;
+console.log(`An event happened, on average, every ${average} minutes.`);
+
+console.log(time);
+for (const [key, value] of [...gameEvents.entries()]) {
+  key <= 45
+    ? console.log(`[FIRST HALF] ${key}: ${value}`)
+    : console.log(`[SECOND HALF] ${key}: ${value}`);
+}
+
 ////////////////////////////////////////////////////////////////////////////
 /*
 const rest1 = {
